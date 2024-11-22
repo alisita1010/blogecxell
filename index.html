@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog interactivo sobre Excel. Consejos, tutoriales y herramientas útiles para mejorar tu productividad con Excel.">
+    <title>Blog de Excel Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0078d4;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .post {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .post h2 {
+            color: #0078d4;
+        }
+        .post p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+        .calculator-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .calculator input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1em;
+        }
+        .calculator button {
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog Interactivo sobre Excel</h1>
+        <p>Consejos, tutoriales y herramientas útiles sobre Excel</p>
+    </header>
+
+    <div class="content">
+        <!-- Blog post example -->
+        <div class="post">
+            <h2>¿Cómo usar las funciones más útiles de Excel?</h2>
+            <p>En este artículo exploraremos algunas de las funciones más útiles de Excel que puedes utilizar para mejorar tu productividad.</p>
+        </div>
+        
+        <div class="post">
+            <h2>Cómo crear tablas dinámicas en Excel</h2>
+            <p>Las tablas dinámicas son una herramienta poderosa en Excel para analizar grandes cantidades de datos. Aprende a crear y personalizar tablas dinámicas en Excel.</p>
+        </div>
+
+        <!-- Interactive Excel Calculator -->
+        <div class="calculator-container">
+            <h2>Calculadora de Excel Interactiva</h2>
+            <p>Usa esta calculadora básica para realizar algunas operaciones matemáticas sencillas.</p>
+            <div class="calculator">
+                <input type="number" id="input1" placeholder="Ingresa un número">
+                <input type="number" id="input2" placeholder="Ingresa otro número">
+                <br>
+                <button onclick="calcular()">Sumar</button>
+                <p id="resultado">Resultado: </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+            // Obtener los valores de los inputs
+            var num1 = parseFloat(document.getElementById('input1').value);
+            var num2 = parseFloat(document.getElementById('input2').value);
+            
+            // Verificar si los valores son números
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var resultado = num1 + num2;
+                document.getElementById('resultado').textContent = "Resultado: " + resultado;
+            } else {
+                document.getElementById('resultado').textContent = "Por favor, ingresa números válidos.";
+            }
+        }
+    </script>
+</body>
+</html>
